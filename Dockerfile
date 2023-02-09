@@ -15,7 +15,7 @@ RUN update-ca-certificates -f
 
 RUN apt-get update && apt-get install -y libc6 libgcc1 libgssapi-krb5-2 libicu66 libssl1.1 libstdc++6 zlib1g
 
-RUN wget https://github.com/PowerShell/PowerShell/releases/download/v7.1.5/powershell-7.1.5-linux-arm64.tar.gz -O powershell.tar.gz
+RUN wget https://github.com/PowerShell/PowerShell/releases/download/v7.3.2/powershell-7.3.2-linux-arm64.tar.gz -O powershell.tar.gz
 RUN mkdir -p /opt/pwsh
 RUN tar -xvzf powershell.tar.gz -C /opt/pwsh
 
@@ -27,7 +27,7 @@ RUN if [[ ${COMMON_IMAGE} == *"cuda"* ]] ; then ln -s /usr/local/cuda/lib64/stub
 RUN ln -s /opt/pwsh/pwsh /usr/bin/powershell
 RUN ln -s /root/.dotnet/dotnet /usr/bin/dotnet
 
-RUN git clone https://github.com/BililiveRecorder/BililiveRecorder.git && cd BililiveRecorder && git checkout v2.5.0
+RUN git clone https://github.com/BililiveRecorder/BililiveRecorder.git && cd BililiveRecorder
 
 WORKDIR "/BililiveRecorder"
 
