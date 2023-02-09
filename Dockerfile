@@ -8,6 +8,7 @@ ENV TZ=Asia/Shanghai
 ARG DEBIAN_FRONTEND=noninteractive
 
 
+
 RUN apt-get update && apt-get install -y wget git apt-transport-https software-properties-common
 RUN add-apt-repository universe
 RUN apt-get update && apt-get install -y wget ffmpeg fonts-noto-color-emoji fonts-noto-cjk-extra cmake python3 python3-pip
